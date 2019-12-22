@@ -1,0 +1,7 @@
+{
+	"name": "dev-mode",
+	"displayName": "Developer Mode",
+	"author": "DeltaNedas",
+	"description": "Lets you type into the console.",
+	"version": "1.0.0"
+}
