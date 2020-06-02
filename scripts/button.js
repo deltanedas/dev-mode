@@ -5,7 +5,10 @@ var shown = false;
 // button for poor mobile users
 ui.addButton("console", "admin", () => {
 	shown = !shown;
-	Vars.ui.scriptfrag.toggle();
+	// Prompt for command
+	if (shown) {
+		Vars.ui.scriptfrag.toggle();
+	}
 });
 
 ui.loadEvents.push(() => {
