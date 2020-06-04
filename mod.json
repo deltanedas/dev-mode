@@ -3,6 +3,6 @@
 	"displayName": "Developer Mode",
 	"author": "DeltaNedas",
 	"description": "Lets you type into the console.\nPress [stat]F8[] to open on PC.\n[stat]Requires [#00aaff]DeltaNedas/ui-lib[] on mobile.",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"hidden": true
 }

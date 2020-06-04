@@ -1,4 +1,4 @@
-const ui = require("ui-lib/library");
+var ui = require("ui-lib/library");
 
 var shown = false;
 
@@ -11,6 +11,6 @@ ui.addButton("console", "admin", () => {
 	}
 });
 
-ui.loadEvents.push(() => {
+ui.once(() => {
 	Vars.ui.scriptfrag.visible(boolp(() => shown));
 });
