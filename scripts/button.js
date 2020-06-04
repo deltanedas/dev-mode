@@ -11,6 +11,6 @@ ui.addButton("console", "terminal", () => {
 	}
 });
 
-ui.once(() => {
+ui.onLoad(() => {
 	Vars.ui.scriptfrag.visible(boolp(() => shown));
 });
