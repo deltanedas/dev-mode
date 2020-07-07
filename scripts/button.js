@@ -38,7 +38,7 @@ ui.addTable("bottom", "console", console => {
 		Vars.ui.scriptfrag.toggle();
 	})).marginRight(8);
 
-	console.label(prov(() => "Console")).marginLeft(8);
+	console.add("Console").marginLeft(8);
 });
 
 ui.onLoad(() => {
