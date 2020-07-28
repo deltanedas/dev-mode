@@ -14,12 +14,20 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-var ui = require("ui-lib/library");
+
+(() => {
+
+const ui = require("ui-lib/library");
 
 var shown = false;
 
-// button for poor mobile users
+/* button for poor mobile users */
 ui.addButton("console", "terminal", () => {
+	shown = !shown;
+});
+
+/* or if you don't want to start a game */
+ui.addMenuButton("$console", "terminal", () => {
 	shown = !shown;
 });
 
@@ -44,3 +52,5 @@ ui.addTable("bottom", "console", console => {
 ui.onLoad(() => {
 	Vars.ui.scriptfrag.visible(boolp(() => shown));
 });
+
+})();
