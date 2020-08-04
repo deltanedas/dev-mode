@@ -15,42 +15,38 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-(() => {
-
 const ui = require("ui-lib/library");
 
 var shown = false;
 
-/* button for poor mobile users */
-ui.addButton("console", "terminal", () => {
+const toggle = () => {
 	shown = !shown;
-});
+};
+
+/* button for poor mobile users */
+ui.addButton("console", "terminal", toggle);
 
 /* or if you don't want to start a game */
-ui.addMenuButton("$console", "terminal", () => {
-	shown = !shown;
-});
+ui.addMenuButton("$console", "terminal", toggle);
 
 ui.addTable("bottom", "console", console => {
 	console.background(Tex.buttonTrans);
-	console.visible(boolp(() => shown));
+	console.visibility = () => shown;
 	console.defaults().margin(8);
 
 	// Clear the console
-	console.addImageButton(Icon.refresh, Styles.clearPartiali, 40, run(() => {
+	console.button(Icon.refresh, Styles.clearPartiali, 40, () => {
 		Vars.ui.scriptfrag.clearMessages();
-	}));
+	});
 
 	// Prompt for a line of JS
-	console.addImageButton(Icon.terminal, Styles.clearPartiali, 40, run(() => {
+	console.button(Icon.terminal, Styles.clearPartiali, 40, () => {
 		Vars.ui.scriptfrag.toggle();
-	})).marginRight(8);
+	}).marginRight(8);
 
 	console.add("Console").marginLeft(8);
 });
 
 ui.onLoad(() => {
-	Vars.ui.scriptfrag.visible(boolp(() => shown));
+	Vars.ui.scriptfrag.visibility = () => shown;
 });
-
-})();
