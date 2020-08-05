@@ -17,6 +17,9 @@
 
 const ui = require("ui-lib/library");
 
+// Android also doesn't load the logger automatically in 6.0
+Vars.loadLogger();
+
 var shown = false;
 
 const toggle = () => {
