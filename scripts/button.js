@@ -49,18 +49,18 @@ ui.addTable("console", "console", console => {
 	console.defaults().margin(8);
 
 	// Clear the console
-	console.button(Icon.refresh, Styles.clearPartiali, 40, () => {
-		Vars.ui.scriptfrag.clearMessages();
+	console.button(Icon.refresh, Styles.cleari, 40, () => {
+		Vars.ui.consolefrag.clearMessages();
 	});
 
 	// Prompt for a line of JS
-	console.button(Icon.terminal, Styles.clearPartiali, 40, () => {
-		Vars.ui.scriptfrag.toggle();
+	console.button(Icon.terminal, Styles.cleari, 40, () => {
+		Vars.ui.consolefrag.toggle();
 	}).marginRight(8);
 
 	console.add("$console").marginLeft(8);
 });
 
 ui.onLoad(() => {
-	Vars.ui.scriptfrag.visibility = () => shown;
+	Vars.ui.consolefrag.visibility = () => shown;
 });
